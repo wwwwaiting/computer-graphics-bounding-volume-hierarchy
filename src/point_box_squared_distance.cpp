@@ -6,6 +6,11 @@ double point_box_squared_distance(
 {
   ////////////////////////////////////////////////////////////////////////////
   // Replace with your code here
-  return 0;
+  double sqrD = 0;
+  for (int i = 0; i < 3; i++){
+    double d = fmax(fmax(box.min_corner(i)-query(i), query(i)-box.max_corner(i)), 0);
+    sqrD = sqrD + d*d;
+  }
+  return sqrD;
   ////////////////////////////////////////////////////////////////////////////
 }

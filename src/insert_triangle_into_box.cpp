@@ -8,6 +8,10 @@ void insert_triangle_into_box(
 {
   ////////////////////////////////////////////////////////////////////////////
   // Add your code here
+  for (int i = 0; i < 3; i++){
+    B.min_corner(i) = fmin(fmin(fmin(a(i), b(i)), c(i)), B.min_corner(i));
+    B.max_corner(i) = fmax(fmax(fmax(a(i), b(i)), c(i)), B.max_corner(i));
+  }
   ////////////////////////////////////////////////////////////////////////////
 }
 
